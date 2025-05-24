@@ -11,3 +11,4 @@ services.AddGoogleTranslateServices();
 var provider = services.BuildServiceProvider();
 
 var translatorService = provider.GetRequiredService<IGoogleTranslatorService>();
+

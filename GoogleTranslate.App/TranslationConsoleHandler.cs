@@ -12,6 +12,15 @@ namespace GoogleTranslate.App
             _googleTranslatorService = googleTranslatorService;
         }
 
+        public async Task Translate(string textToTranslate, string sourceLanguage, List<string> targetLanguage)
+        {
+            foreach (var language in targetLanguage)
+            {
+                var response = await _googleTranslatorService.TranslateText(sourceLanguage, language, textToTranslate);
+                Console.WriteLine(response);
+            }
+        }
+
         public async Task DisplayLanguages()
         {
             var languages = await _googleTranslatorService.GetLanguagesList();
