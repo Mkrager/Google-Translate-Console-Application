@@ -1,7 +1,7 @@
 ﻿using Google.Cloud.Translation.V2;
 using GoogleTranslate.App.Contracts;
 
-namespace GoogleTranslate.App
+namespace GoogleTranslate.App.Services
 {
     public class GoogleTranslatorService : IGoogleTranslatorService
     {
