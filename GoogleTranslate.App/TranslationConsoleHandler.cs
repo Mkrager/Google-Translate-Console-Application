@@ -67,5 +67,43 @@ namespace GoogleTranslate.App
 
             return languages[selectedIndex - 1].Code;
         }
+
+        public List<string> GetTargetLanguages(List<Language> languages)
+        {
+            var targetLanguages = new List<string>();
+            string input;
+            int selectedIndex;
+
+            Console.WriteLine("Enter target languages: ");
+
+            do
+            {
+                input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input) || !int.TryParse(input, out selectedIndex) || selectedIndex < 1 || selectedIndex > languages.Count)
+                {
+                    Console.WriteLine("Error empty input");
+                    continue;
+                }
+
+                targetLanguages.Add(languages[selectedIndex - 1].Code);
+
+                if (targetLanguages == null)
+                {
+                    Console.WriteLine("Error empty input");
+                    continue;
+                }
+                Console.WriteLine("Type 'c' for countine or input another language");
+                var key = Console.ReadKey();
+
+                if (key.Key == ConsoleKey.C)
+                    break;
+
+                Console.WriteLine();
+                continue;
+            } while (true);
+
+            return targetLanguages;
+        }
     }
 }
