@@ -1,8 +1,15 @@
 ﻿using GoogleTranslate.App;
 using GoogleTranslate.App.Contracts;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", @"C:\Users\Smaga\Downloads\light-sunup-460810-q7-a2928fd47886.json");
+var configuration = new ConfigurationBuilder()
+    .AddUserSecrets<Program>()
+    .Build();
+
+var credentialsPath = configuration["Google:CredentialsPath"];
+
+Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentialsPath);
 
 var services = new ServiceCollection();
 

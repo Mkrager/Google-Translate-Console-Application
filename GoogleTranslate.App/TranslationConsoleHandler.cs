@@ -27,7 +27,7 @@ namespace GoogleTranslate.App
             await Translate(textToTranslate, sourceLanguage, targetLanguage);
         }
 
-        public async Task Translate(string textToTranslate, string sourceLanguage, List<string> targetLanguage)
+        private async Task Translate(string textToTranslate, string sourceLanguage, List<string> targetLanguage)
         {
             foreach (var language in targetLanguage)
             {
@@ -36,12 +36,12 @@ namespace GoogleTranslate.App
             }
         }
 
-        public async Task<List<Language>> GetLanguages()
+        private async Task<List<Language>> GetLanguages()
         {
             return await _googleTranslatorService.GetLanguagesList();
         }
 
-        public async Task DisplayLanguages()
+        private async Task DisplayLanguages()
         {
             var languages = await _googleTranslatorService.GetLanguagesList();
 
@@ -52,7 +52,7 @@ namespace GoogleTranslate.App
             Console.WriteLine();
         }
 
-        public string GetTextToTranslate()
+        private string GetTextToTranslate()
         {
             string textToTranslate;
 
@@ -74,7 +74,7 @@ namespace GoogleTranslate.App
             return textToTranslate;
         }
 
-        public string GetSourceLanguage(List<Language> languages)
+        private string GetSourceLanguage(List<Language> languages)
         {
             int selectedIndex;
             string input;
@@ -97,7 +97,7 @@ namespace GoogleTranslate.App
             return languages[selectedIndex - 1].Code;
         }
 
-        public List<string> GetTargetLanguages(List<Language> languages)
+        private List<string> GetTargetLanguages(List<Language> languages)
         {
             var targetLanguages = new List<string>();
             string input;
