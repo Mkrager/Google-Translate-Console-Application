@@ -1,4 +1,6 @@
-﻿namespace GoogleTranslate.App.Contracts
+﻿using Google.Cloud.Translation.V2;
+
+namespace GoogleTranslate.App.Contracts
 {
     public interface IGoogleTranslatorService
     {
