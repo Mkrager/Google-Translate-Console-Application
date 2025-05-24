@@ -13,7 +13,7 @@ namespace GoogleTranslate.App.Services
 
         public async Task<List<Language>> GetLanguagesList()
         {
-            var response = await _client.ListLanguagesAsync();
+            var response = await _client.ListLanguagesAsync("en");
             return response.ToList();
         }
 

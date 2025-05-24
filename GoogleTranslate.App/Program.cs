@@ -12,3 +12,6 @@ var provider = services.BuildServiceProvider();
 
 var translatorService = provider.GetRequiredService<IGoogleTranslatorService>();
 
+var translationConsloleHandler = new TranslationConsoleHandler(translatorService);
+
+await translationConsloleHandler.Start();
