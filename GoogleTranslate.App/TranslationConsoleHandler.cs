@@ -45,6 +45,27 @@ namespace GoogleTranslate.App
             return textToTranslate;
         }
 
+        public string GetSourceLanguage(List<Language> languages)
+        {
+            int selectedIndex;
+            string input;
 
+            Console.WriteLine("Enter source language: ");
+
+            do
+            {
+                input = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(input) || !int.TryParse(input, out selectedIndex) || selectedIndex < 1 || selectedIndex > languages.Count)
+                {
+                    Console.WriteLine("Invalid input, try again.");
+                    continue;
+                }
+
+                break;
+            } while (true);
+
+            return languages[selectedIndex - 1].Code;
+        }
     }
 }
