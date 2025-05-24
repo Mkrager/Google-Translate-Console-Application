@@ -31,14 +31,16 @@ namespace GoogleTranslate.App.Services
         {
             foreach (var language in targetLanguage)
             {
-                var response = await _googleTranslatorService.TranslateText(sourceLanguage, language, textToTranslate);
-                Console.WriteLine(response);
+                try
+                {
+                    var response = await _googleTranslatorService.TranslateText(sourceLanguage, language, textToTranslate);
+                    Console.WriteLine(response);
+                }
+                catch (Exception ex) 
+                { 
+                    Console.WriteLine($"Failed to translate to {language}. Error: {ex.Message}"); 
+                }
             }
-        }
-
-        private async Task<List<Language>> GetLanguages()
-        {
-            return await _googleTranslatorService.GetLanguagesList();
         }
 
         private async Task DisplayLanguages()

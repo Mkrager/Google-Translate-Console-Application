@@ -19,16 +19,9 @@ namespace GoogleTranslate.App.Services
 
         public async Task<string> TranslateText(string sourceLanguage, string targetLanguage, string textToTranslate)
         {
-            try
-            {
-                var response = await _client.TranslateTextAsync(textToTranslate, targetLanguage, sourceLanguage);
+            var response = await _client.TranslateTextAsync(textToTranslate, targetLanguage, sourceLanguage);
 
-                return response.TranslatedText;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            return response.TranslatedText;
         }
     }
 }
