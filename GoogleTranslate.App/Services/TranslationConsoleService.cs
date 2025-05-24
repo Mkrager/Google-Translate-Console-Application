@@ -1,13 +1,13 @@
 ﻿using Google.Cloud.Translation.V2;
 using GoogleTranslate.App.Contracts;
 
-namespace GoogleTranslate.App
+namespace GoogleTranslate.App.Services
 {
-    public class TranslationConsoleHandler
+    public class TranslationConsoleService : ITranslationConsoleService
     {
         private readonly IGoogleTranslatorService _googleTranslatorService;
 
-        public TranslationConsoleHandler(IGoogleTranslatorService googleTranslatorService)
+        public TranslationConsoleService(IGoogleTranslatorService googleTranslatorService)
         {
             _googleTranslatorService = googleTranslatorService;
         }
@@ -131,5 +131,6 @@ namespace GoogleTranslate.App
 
             return targetLanguages;
         }
+
     }
 }

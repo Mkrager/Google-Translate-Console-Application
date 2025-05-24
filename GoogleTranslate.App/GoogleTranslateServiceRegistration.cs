@@ -10,6 +10,7 @@ namespace GoogleTranslate.App
             this IServiceCollection services)
         {
             services.AddScoped<IGoogleTranslatorService, GoogleTranslatorService>();
+            services.AddScoped<ITranslationConsoleService, TranslationConsoleService>();
 
             return services;
         }
