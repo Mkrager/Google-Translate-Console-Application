@@ -10,11 +10,11 @@ namespace GoogleTranslate.Application.Features.GoogleTranslate.Queries.Translate
                 .NotEmpty()
                 .NotNull().WithMessage("{PropertyName} is required.");
 
-            RuleFor(t => t.targetLanguage)
+            RuleFor(t => t.TargetLanguage)
                 .NotEmpty()
                 .NotNull().WithMessage("{PropertyName} is required.");
 
-            RuleFor(t => t.sourceLanguage)
+            RuleFor(t => t.SourceLanguage)
                 .NotEmpty()
                 .NotNull().WithMessage("{PropertyName} is required.");
         }

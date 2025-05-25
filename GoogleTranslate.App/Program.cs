@@ -7,10 +7,6 @@ var configuration = new ConfigurationBuilder()
     .AddUserSecrets<Program>()
     .Build();
 
-var credentialsPath = configuration["Google:CredentialsPath"];
-
-Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentialsPath);
-
 var services = new ServiceCollection();
 
 services.AddGoogleTranslateServices();

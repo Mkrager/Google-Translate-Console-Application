@@ -24,7 +24,7 @@ namespace GoogleTranslate.Infrastructure.GoogleTranslate
 
         public async Task<string> TranslateText(TranslateRequest translateRequest)
         {
-            var response = await _client.TranslateTextAsync(translateRequest.TextToTranslate, translateRequest.targetLanguage, translateRequest.sourceLanguage);
+            var response = await _client.TranslateTextAsync(translateRequest.TextToTranslate, translateRequest.TargetLanguage, translateRequest.SourceLanguage);
 
             return response.TranslatedText;
         }
