@@ -10,8 +10,6 @@ namespace GoogleTranslate.Api
         public static WebApplication ConfigureService(
             this WebApplicationBuilder builder)
         {
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "<removed-clientId>");
-
             AddSwagger(builder.Services);
 
             builder.Services.AddApplicationServices();

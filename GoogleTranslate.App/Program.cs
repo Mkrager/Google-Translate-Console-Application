@@ -8,6 +8,6 @@ services.AddGoogleTranslateServices();
 
 var provider = services.BuildServiceProvider();
 
-var consoleService = provider.GetRequiredService<ITranslationConsoleService>();
+var translationConsoleService = provider.GetRequiredService<ITranslationConsoleService>();
 
-await consoleService.Start();
+await translationConsoleService.Start();

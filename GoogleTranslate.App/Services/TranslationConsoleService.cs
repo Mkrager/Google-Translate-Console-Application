@@ -105,7 +105,7 @@ namespace GoogleTranslate.App.Services
             string input;
             int selectedIndex;
 
-            Console.Write("Enter indexes of target languages: ");
+            Console.Write("Enter index of target language: ");
 
             do
             {
@@ -127,12 +127,11 @@ namespace GoogleTranslate.App.Services
                     Console.WriteLine("Error empty input, try again: ");
                     continue;
                 }
-                Console.Write("Type 'c' for countine or input another language: ");
+                Console.Write("Type 'c' for countine or input index of another language: ");
                 continue;
             } while (true);
 
             return targetLanguages;
         }
-
     }
 }
