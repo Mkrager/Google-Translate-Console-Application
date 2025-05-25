@@ -1,11 +1,6 @@
 ﻿using GoogleTranslate.App;
 using GoogleTranslate.App.Contracts;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
-var configuration = new ConfigurationBuilder()
-    .AddUserSecrets<Program>()
-    .Build();
 
 var services = new ServiceCollection();
 

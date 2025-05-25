@@ -1,8 +1,10 @@
-﻿namespace GoogleTranslate.App.Contracts
+﻿using GoogleTranslate.App.Models;
+
+namespace GoogleTranslate.App.Contracts
 {
     public interface IGoogleTranslatorService
     {
-        //Task<string> TranslateText(string sourceLanguage, string targetLanguage, string textToTranslate);
-        //Task<List<Language>> GetLanguagesList();
+        Task<string> TranslateText(string sourceLanguage, string targetLanguage, string textToTranslate);
+        Task<List<LanguageViewModel>> GetLanguagesList();
     }
 }
