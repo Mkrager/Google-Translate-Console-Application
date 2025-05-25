@@ -12,10 +12,10 @@ namespace GoogleTranslate.Infrastructure.GoogleTranslate
             _client = TranslationClient.Create();
         }
 
-        public async Task<List<ListLanguagesResponse>> GetLanguagesList()
+        public async Task<List<LanguageResponse>> GetLanguagesList()
         {
             var response = await _client.ListLanguagesAsync("en");
-            return response.Select(l => new ListLanguagesResponse
+            return response.Select(l => new LanguageResponse
             {
                 Code = l.Code,
                 Name = l.Name
