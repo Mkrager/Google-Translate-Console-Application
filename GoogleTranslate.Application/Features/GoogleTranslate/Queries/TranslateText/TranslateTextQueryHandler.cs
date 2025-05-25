@@ -21,7 +21,7 @@ namespace GoogleTranslate.Application.Features.GoogleTranslate.Queries.Translate
         {
             var validator = new TranslateTextQueryValidator();
 
-            var validationResult =  await validator.ValidateAsync(request);
+            var validationResult = await validator.ValidateAsync(request);
 
             if (validationResult.Errors.Count > 0)
                 throw new ValidationException(validationResult);

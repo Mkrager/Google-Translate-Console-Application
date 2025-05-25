@@ -10,6 +10,7 @@ namespace GoogleTranslate.App
             this IServiceCollection services)
         {
             services.AddHttpClient();
+
             services.AddScoped<IGoogleTranslatorService, GoogleTranslatorService>();
             services.AddScoped<ITranslationConsoleService, TranslationConsoleService>();
 
