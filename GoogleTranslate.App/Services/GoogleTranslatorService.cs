@@ -20,7 +20,7 @@ namespace GoogleTranslate.App.Services
         }
         public async Task<List<LanguageViewModel>> GetLanguagesList()
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"https://localhost:7067/api/GoogleTranslate/languages");
+            var request = new HttpRequestMessage(HttpMethod.Get, "languages");
 
             var response = await _httpClient.SendAsync(request);
 
@@ -40,7 +40,7 @@ namespace GoogleTranslate.App.Services
         {
             try
             {
-                var request = new HttpRequestMessage(HttpMethod.Get, $"https://localhost:7067/api/GoogleTranslate/translate?sourceLanguage={sourceLanguage}&targetLanguage={targetLanguage}&textToTranslate={Uri.EscapeDataString(textToTranslate)}");
+                var request = new HttpRequestMessage(HttpMethod.Get, $"translate?sourceLanguage={sourceLanguage}&targetLanguage={targetLanguage}&textToTranslate={Uri.EscapeDataString(textToTranslate)}");
 
                 var response = await _httpClient.SendAsync(request);
 
