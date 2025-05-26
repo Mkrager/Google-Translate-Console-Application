@@ -36,11 +36,16 @@ namespace GoogleTranslate.App.Services
             return new List<LanguageViewModel>();
         }
 
-        public async Task<string> TranslateText(string sourceLanguage, string targetLanguage, string textToTranslate)
+        public async Task<string> TranslateText(
+            string sourceLanguage, 
+            string targetLanguage, 
+            string textToTranslate)
         {
             try
             {
-                var request = new HttpRequestMessage(HttpMethod.Get, $"translate?sourceLanguage={sourceLanguage}&targetLanguage={targetLanguage}&textToTranslate={Uri.EscapeDataString(textToTranslate)}");
+                var url = $"translate?sourceLanguage={sourceLanguage}&targetLanguage={targetLanguage}&textToTranslate={Uri.EscapeDataString(textToTranslate)}";
+
+                var request = new HttpRequestMessage(HttpMethod.Get, url);
 
                 var response = await _httpClient.SendAsync(request);
 

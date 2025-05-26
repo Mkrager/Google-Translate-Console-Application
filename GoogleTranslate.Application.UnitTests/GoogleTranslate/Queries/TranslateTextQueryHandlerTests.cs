@@ -31,8 +31,8 @@ namespace GoogleTranslate.Application.UnitTests.GoogleTranslate.Queries
 
             var query = new TranslateTextQuery
             {
-                sourceLanguage = "en",
-                targetLanguage = "uk",
+                SourceLanguage = "en",
+                TargetLanguage = "uk",
                 TextToTranslate = "Hello"
             };
 
@@ -49,8 +49,8 @@ namespace GoogleTranslate.Application.UnitTests.GoogleTranslate.Queries
 
             var invalidQuery = new TranslateTextQuery
             {
-                sourceLanguage = "",
-                targetLanguage = "uk",
+                SourceLanguage = "",
+                TargetLanguage = "uk",
                 TextToTranslate = "Hello"
             };
 

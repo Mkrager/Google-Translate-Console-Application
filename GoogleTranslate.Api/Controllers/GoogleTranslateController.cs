@@ -21,9 +21,18 @@ namespace GoogleTranslate.Api.Controllers
         [HttpGet("translate", Name = "TranslateText")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesDefaultResponseType]
-        public async Task<ActionResult<string>> TranslateText(string sourceLanguage, string targetLanguage, string textToTranslate)
+        public async Task<ActionResult<string>> TranslateText(
+            string sourceLanguage, 
+            string targetLanguage, 
+            string textToTranslate)
         {
-            var dtos = await mediator.Send(new TranslateTextQuery() { SourceLanguage = sourceLanguage, TargetLanguage = targetLanguage, TextToTranslate = textToTranslate });
+            var dtos = await mediator.Send(new TranslateTextQuery()
+            {
+                SourceLanguage = sourceLanguage,
+                TargetLanguage = targetLanguage,
+                TextToTranslate = textToTranslate
+            });
+
             return Ok(dtos);
         }
 

@@ -27,13 +27,20 @@ namespace GoogleTranslate.App.Services
             await Translate(textToTranslate, sourceLanguage, targetLanguage);
         }
 
-        private async Task Translate(string textToTranslate, string sourceLanguage, List<string> targetLanguage)
+        private async Task Translate(
+            string textToTranslate, 
+            string sourceLanguage, 
+            List<string> targetLanguage)
         {
             foreach (var language in targetLanguage)
             {
                 try
                 {
-                    var response = await _googleTranslatorService.TranslateText(sourceLanguage, language, textToTranslate);
+                    var response = await _googleTranslatorService.TranslateText(
+                        sourceLanguage, 
+                        language, 
+                        textToTranslate);
+
                     Console.WriteLine(response);
                 }
                 catch (Exception ex)
@@ -87,7 +94,10 @@ namespace GoogleTranslate.App.Services
             {
                 input = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(input) || !int.TryParse(input, out selectedIndex) || selectedIndex < 1 || selectedIndex > languages.Count)
+                if (string.IsNullOrWhiteSpace(input) 
+                    || !int.TryParse(input, out selectedIndex) 
+                    || selectedIndex < 1 
+                    || selectedIndex > languages.Count)
                 {
                     Console.Write("Invalid input, try again: ");
                     continue;
@@ -114,7 +124,10 @@ namespace GoogleTranslate.App.Services
                 if (input == "c" || input == "C")
                     break;
 
-                if (string.IsNullOrWhiteSpace(input) || !int.TryParse(input, out selectedIndex) || selectedIndex < 1 || selectedIndex > languages.Count)
+                if (string.IsNullOrWhiteSpace(input) 
+                    || !int.TryParse(input, out selectedIndex) 
+                    || selectedIndex < 1 
+                    || selectedIndex > languages.Count)
                 {
                     Console.Write("Error empty input, try again: ");
                     continue;
@@ -127,6 +140,7 @@ namespace GoogleTranslate.App.Services
                     Console.WriteLine("Error empty input, try again: ");
                     continue;
                 }
+
                 Console.Write("Type 'c' for countine or input index of another language: ");
                 continue;
             } while (true);
